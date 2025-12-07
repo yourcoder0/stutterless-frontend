@@ -75,7 +75,9 @@ const Badge = ({ name, earned }: { name: string; earned: boolean }) => {
   );
 };
 
-const backendBase = "http://localhost:4000";
+const backendBase =
+  process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000";
+
 
 export default function HomePage() {
   const [currentUser, setCurrentUser] = useState<string | null>(null);
